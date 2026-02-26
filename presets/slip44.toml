@@ -1,0 +1,11 @@
+[[asset]]
+id = 'bip122:000000000019d6689c085ae165831e93/slip44:0'
+name = 'Bitcoin'
+symbol = 'BTC'
+network = 'BTC'
+
+[[asset]]
+id = 'eip155:1/slip44:60'
+name = 'Ethereum'
+symbol = 'ETH'
+network = 'ETH'
