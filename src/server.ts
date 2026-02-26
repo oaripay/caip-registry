@@ -1,17 +1,23 @@
 import log from '@mwni/log'
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
+import { prettyJSON } from 'hono/pretty-json'
 import type { AppContext } from './types.js'
 import { mapAliasToAsset } from './registry.js'
 
 export default function startServer(ctx: AppContext): { close: () => void } {
 	const app = new Hono()
 
+	app.use(prettyJSON({
+		space: 4,
+		force: true
+	}))
+
 	app.get('/', async c => {
 		return c.json({
-			name: 'caip-19-registry',
+			name: 'caip-registry',
 			version: ctx.version,
-			assets: ctx.assetList
+			assets: ctx.assets
 		})
 	})
 
@@ -19,7 +25,7 @@ export default function startServer(ctx: AppContext): { close: () => void } {
 		const payload = await c.req.json() as Array<{
 			symbol: string
 			network?: string
-			source?: string
+			platform?: string
 		}>
 
 		if(!Array.isArray(payload)){

@@ -9,7 +9,7 @@ import log from '@mwni/log'
 import descriptor from '../package.json' with { type: 'json' }
 import startServer from './server.js'
 import type { AppConfig, AppContext } from './types.js'
-import { loadAssetLists } from './registry.js'
+import { initRegistry } from './registry.js'
 
 const args = minimist(process.argv.slice(2) || [])
 
@@ -36,14 +36,15 @@ const ctx: AppContext = {
 	srcDir: path.dirname(fileURLToPath(import.meta.url)),
 	version: descriptor.version,
 	config,
-	assetList: []
+	chains: [],
+	assets: []
 }
 
 const action = args._[0] ?? 'run'
 
 switch(action){
 	case 'run': {
-		loadAssetLists(ctx)
+		initRegistry(ctx)
 		startServer(ctx)
 		break
 	}

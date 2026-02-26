@@ -12,21 +12,21 @@ export type AppContext = {
 	srcDir: string
 	version: string
 	config: AppConfig
-	assetList: Array<Caip19Asset>,
-	aliasMap: Map<Caip19Alias, Caip19Asset>
+	chains: Array<Caip2Chain>,
+	assets: Array<Caip19Asset>,
 	server?: { close: () => void },
+}
+
+export type Caip2Chain = {
+	id: string,
+	name: string,
+	aliases: Array<string>
 }
 
 export type Caip19Asset = {
 	id: string,
+	chain: Caip2Chain,
 	name: string,
-	symbol: string,
-	network: string,
-	aliases: Array<Caip19Alias>
-}
-
-export type Caip19Alias = {
-	symbol: string,
-	network?: string,
-	usedBy?: Array<string>
+	symbol: string
+	aliases: Array<string>
 }
