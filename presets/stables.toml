@@ -132,7 +132,7 @@ chainAliases = ['ERC-20', 'ERC20']
 id = 'eip155:56/erc20:0xb3c11196a4f3b1da7c23d9fb0a3dde9c6340934f'
 name = 'Pax Dollar'
 symbol = 'USDP'
-chainAliases = ['ERC-20', 'ERC20']
+chainAliases = ['BEP-20', 'BEP20']
 
 [[asset]]
 id = 'eip155:1/erc20:0x056fd409e1d7a124bd7017459dfea2f387b6d5cd'
