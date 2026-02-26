@@ -9,6 +9,8 @@ export default function startServer(ctx: AppContext): { close: () => void } {
 
 	app.get('/', async c => {
 		return c.json({
+			name: 'caip-19-registry',
+			version: ctx.version,
 			assets: ctx.assetList
 		})
 	})
@@ -24,9 +26,10 @@ export default function startServer(ctx: AppContext): { close: () => void } {
 			return c.json({ error: 'Body must be an array' }, 400)
 		}
 
-		const mapped = payload.map(alias => mapAliasToAsset(ctx, alias))
+		const mapped = payload
+			.map(alias => mapAliasToAsset(ctx, alias))
 
-		return c.json(mapped)
+		return c.json({ mapped })
 	})
 
 	const server = serve({
