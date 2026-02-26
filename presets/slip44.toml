@@ -1,227 +1,189 @@
 [[asset]]
 id = 'bip122:000000000019d6689c085ae165831e93/slip44:0'
 name = 'Bitcoin'
-symbol = 'BTC'
-network = 'BTC'
+symbols = 'BTC'
 
 [[asset]]
 id = 'eip155:1/slip44:60'
 name = 'Ethereum'
 symbol = 'ETH'
-network = 'ETH'
 
 [[asset]]
-id = "xrpl:0/slip44:144"
-name = "XRP"
-symbol = "XRP"
-network = "xrpl"
+id = 'xrpl:0/slip44:144'
+name = 'XRP'
+symbol = 'XRP'
 
 [[asset]]
-id = "eip155:56/slip44:714"
-name = "BNB"
-symbol = "BNB"
-network = "eip155"
+id = 'eip155:56/slip44:714'
+name = 'BNB'
+symbol = 'BNB'
 
 [[asset]]
-id = "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/slip44:501"
-name = "Solana"
-symbol = "SOL"
-network = "solana"
+id = 'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/slip44:501'
+name = 'Solana'
+symbol = 'SOL'
 
 [[asset]]
-id = "tron:0x2b6653dc/slip44:195"
-name = "TRON"
-symbol = "TRX"
-network = "tron"
+id = 'tron:0x2b6653dc/slip44:195'
+name = 'TRON'
+symbol = 'TRX'
 
 [[asset]]
-id = "bip122:1a91e3dace36e2be3bf030a65679fe82/slip44:3"
-name = "Dogecoin"
-symbol = "DOGE"
-network = "bip122"
+id = 'bip122:1a91e3dace36e2be3bf030a65679fe82/slip44:3'
+name = 'Dogecoin'
+symbol = 'DOGE'
 
 [[asset]]
-id = "cardano:mainnet/slip44:1815"
-name = "Cardano"
-symbol = "ADA"
-network = "cardano"
+id = 'cardano:mainnet/slip44:1815'
+name = 'Cardano'
+symbol = 'ADA'
 
 [[asset]]
-id = "bip122:000000000000000000651ef99cb9fcbe/slip44:145"
-name = "Bitcoin Cash"
-symbol = "BCH"
-network = "bip122"
+id = 'bip122:000000000000000000651ef99cb9fcbe/slip44:145'
+name = 'Bitcoin Cash'
+symbol = 'BCH'
 
 [[asset]]
-id = "eip155:999/slip44:2457"
-name = "Hyperliquid"
-symbol = "HYPE"
-network = "eip155"
+id = 'eip155:999/slip44:2457'
+name = 'Hyperliquid'
+symbol = 'HYPE'
 
 [[asset]]
-id = "canton:mainnet/slip44:6767"
-name = "Canton"
-symbol = "CC"
-network = "canton"
+id = 'canton:mainnet/slip44:6767'
+name = 'Canton'
+symbol = 'CC'
 
 [[asset]]
-id = "monero:418015bb9ae982a1975da7d79277c270/slip44:128"
-name = "Monero"
-symbol = "XMR"
-network = "monero"
+id = 'monero:418015bb9ae982a1975da7d79277c270/slip44:128'
+name = 'Monero'
+symbol = 'XMR'
 
 [[asset]]
-id = "stellar:pubnet/slip44:148"
-name = "Stellar"
-symbol = "XLM"
-network = "stellar"
+id = 'stellar:pubnet/slip44:148'
+name = 'Stellar'
+symbol = 'XLM'
 
 [[asset]]
-id = "hedera:mainnet/slip44:3030"
-name = "Hedera"
-symbol = "HBAR"
-network = "hedera"
+id = 'hedera:mainnet/slip44:3030'
+name = 'Hedera'
+symbol = 'HBAR'
 
 [[asset]]
-id = "bip122:12a765e31ffd4059bada1e25190f6e98/slip44:2"
-name = "Litecoin"
-symbol = "LTC"
-network = "bip122"
+id = 'bip122:12a765e31ffd4059bada1e25190f6e98/slip44:2'
+name = 'Litecoin'
+symbol = 'LTC'
 
 [[asset]]
-id = "zcash:mainnet/slip44:133"
-name = "Zcash"
-symbol = "ZEC"
-network = "zcash"
+id = 'zcash:mainnet/slip44:133'
+name = 'Zcash'
+symbol = 'ZEC'
 
 [[asset]]
-id = "eip155:43114/slip44:9000"
-name = "Avalanche"
-symbol = "AVAX"
-network = "eip155"
+id = 'eip155:43114/slip44:9000'
+name = 'Avalanche'
+symbol = 'AVAX'
 
 [[asset]]
-id = "eip155:25/slip44:394"
-name = "Cronos"
-symbol = "CRO"
-network = "eip155"
+id = 'eip155:25/slip44:394'
+name = 'Cronos'
+symbol = 'CRO'
 
 [[asset]]
-id = "tvm:-239/slip44:607"
-name = "Toncoin"
-symbol = "TON"
-network = "tvm"
+id = 'tvm:-239/slip44:607'
+name = 'Toncoin'
+symbol = 'TON'
 
 [[asset]]
-id = "polkadot:91b171bb158e2d3848fa23a9f1c25182/slip44:354"
-name = "Polkadot"
-symbol = "DOT"
-network = "polkadot"
+id = 'polkadot:91b171bb158e2d3848fa23a9f1c25182/slip44:354'
+name = 'Polkadot'
+symbol = 'DOT'
 
 [[asset]]
-id = "bittensor:mainnet/slip44:1005"
-name = "Bittensor"
-symbol = "TAO"
-network = "bittensor"
+id = 'bittensor:mainnet/slip44:1005'
+name = 'Bittensor'
+symbol = 'TAO'
 
 [[asset]]
-id = "pi:mainnet/slip44:314159"
-name = "Pi"
-symbol = "PI"
-network = "pi"
+id = 'pi:mainnet/slip44:314159'
+name = 'Pi'
+symbol = 'PI'
 
 [[asset]]
-id = "near:mainnet/slip44:397"
-name = "NEAR Protocol"
-symbol = "NEAR"
-network = "near"
+id = 'near:mainnet/slip44:397'
+name = 'NEAR Protocol'
+symbol = 'NEAR'
 
 [[asset]]
-id = "eip155:61/slip44:61"
-name = "Ethereum Classic"
-symbol = "ETC"
-network = "eip155"
+id = 'eip155:61/slip44:61'
+name = 'Ethereum Classic'
+symbol = 'ETC'
 
 [[asset]]
-id = "icp:mainnet/slip44:223"
-name = "Internet Computer"
-symbol = "ICP"
-network = "icp"
+id = 'icp:mainnet/slip44:223'
+name = 'Internet Computer'
+symbol = 'ICP'
 
 [[asset]]
-id = "eip155:137/slip44:966"
-name = "Polygon (prev. MATIC)"
-symbol = "POL"
-network = "eip155"
+id = 'eip155:137/slip44:966'
+name = 'Polygon (prev. MATIC)'
+symbol = 'POL'
 
 [[asset]]
-id = "cosmos:cosmoshub-4/slip44:118"
-name = "Cosmos"
-symbol = "ATOM"
-network = "cosmos"
+id = 'cosmos:cosmoshub-4/slip44:118'
+name = 'Cosmos'
+symbol = 'ATOM'
 
 [[asset]]
-id = "kaspa:mainnet/slip44:111111"
-name = "Kaspa"
-symbol = "KAS"
-network = "kaspa"
+id = 'kaspa:mainnet/slip44:111111'
+name = 'Kaspa'
+symbol = 'KAS'
 
 [[asset]]
-id = "algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73k/slip44:283"
-name = "Algorand"
-symbol = "ALGO"
-network = "algorand"
+id = 'algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73k/slip44:283'
+name = 'Algorand'
+symbol = 'ALGO'
 
 [[asset]]
-id = "fil:f/slip44:461"
-name = "Filecoin"
-symbol = "FIL"
-network = "fil"
+id = 'fil:f/slip44:461'
+name = 'Filecoin'
+symbol = 'FIL'
 
 [[asset]]
-id = "aptos:1/slip44:637"
-name = "Aptos"
-symbol = "APT"
-network = "aptos"
+id = 'aptos:1/slip44:637'
+name = 'Aptos'
+symbol = 'APT'
 
 [[asset]]
-id = "eip155:50/slip44:550"
-name = "XDC Network"
-symbol = "XDC"
-network = "eip155"
+id = 'eip155:50/slip44:550'
+name = 'XDC Network'
+symbol = 'XDC'
 
 [[asset]]
-id = "vechain:mainnet/slip44:818"
-name = "VeChain"
-symbol = "VET"
-network = "vechain"
+id = 'vechain:mainnet/slip44:818'
+name = 'VeChain'
+symbol = 'VET'
 
 [[asset]]
-id = "decred:mainnet/slip44:42"
-name = "Decred"
-symbol = "DCR"
-network = "decred"
+id = 'decred:mainnet/slip44:42'
+name = 'Decred'
+symbol = 'DCR'
 
 [[asset]]
-id = "stacks:1/slip44:5757"
-name = "Stacks"
-symbol = "STX"
-network = "stacks"
+id = 'stacks:1/slip44:5757'
+name = 'Stacks'
+symbol = 'STX'
 
 [[asset]]
-id = "cosmos:pacific-1/slip44:19000118"
-name = "Sei"
-symbol = "SEI"
-network = "cosmos"
+id = 'cosmos:pacific-1/slip44:19000118'
+name = 'Sei'
+symbol = 'SEI'
 
 [[asset]]
-id = "tezos:NetXdQprcVkpaWU/slip44:1729"
-name = "Tezos"
-symbol = "XTZ"
-network = "tezos"
+id = 'tezos:NetXdQprcVkpaWU/slip44:1729'
+name = 'Tezos'
+symbol = 'XTZ'
 
 [[asset]]
-id = "eip155:8217/slip44:8217"
-name = "Kaia"
-symbol = "KAIA"
-network = "eip155"
+id = 'eip155:8217/slip44:8217'
+name = 'Kaia'
+symbol = 'KAIA'
