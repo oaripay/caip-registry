@@ -16,7 +16,7 @@ export default function startServer(ctx: AppContext): { close: () => void } {
 
 	app.get('/', async c => {
 		return c.json({
-			name: 'caip-registry',
+			name: 'caip-19-registry',
 			version: ctx.version,
 			assets: ctx.assets
 		})
