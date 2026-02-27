@@ -8,5 +8,11 @@ port = 8090
 [log]
 level = 'info'
 
-[coinmarketcap]
+[source.coinmarketcap]
 apiKey = '6e48adf8bd6a457e96201defd7a05144'
+
+[source.coingecko]
+apiKey = ''
+
+[source.xrplmeta]
+url = 'https://s1.xrplmeta.org'

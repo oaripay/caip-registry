@@ -1,3 +1,5 @@
+import type Database from 'better-sqlite3'
+
 export type AppConfig = {
 	data: {
 		dir: string
@@ -10,8 +12,6 @@ export type AppConfig = {
 		level: string
 	}
 }
-
-import type Database from 'better-sqlite3'
 
 export type AppContext = {
 	srcDir: string,
@@ -37,4 +37,8 @@ export type Caip19Asset = {
 	symbol: string
 	aliases: Array<string>,
 	chainAliases: Array<string>
+}
+
+export interface Source {
+	getAllAssets(): Promise<Array<object>>
 }
