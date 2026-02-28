@@ -1,4 +1,4 @@
-name: Deploy caip-19-registry
+name: Deploy CAIP-19 Registry
 
 on:
   workflow_dispatch:
@@ -19,4 +19,5 @@ jobs:
           script: |
             cd /root/caip-19-registry
             git pull --rebase --autostash
+            npm i
             pm2 restart caip-19-registry
