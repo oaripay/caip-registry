@@ -6,49 +6,51 @@ import { AppContext, Caip2Chain, Caip19Asset } from './types.js'
 import { readAssets, readChains, writeAssets, writeChains } from './db.js'
 
 type PresetConfig = {
-	chain?: Array<Caip2Chain>,
+	chain?: Array<Caip2Chain>
 	asset?: Array<Caip19Asset>
 }
 
-export async function initRegistry(ctx: AppContext){
+export async function initRegistry(ctx: AppContext) {
 	ingestPresets(ctx)
 
 	ctx.chains = readChains(ctx)
 	ctx.assets = readAssets(ctx)
-	
-	log.info(`loaded ${ctx.chains.length} chains and ${ctx.assets.length} assets in total`)
+
+	log.info(
+		`loaded ${ctx.chains.length} chains and ${ctx.assets.length} assets in total`,
+	)
 }
 
-function ingestPresets(ctx: AppContext){
+function ingestPresets(ctx: AppContext) {
 	const presetsDir = path.join(ctx.srcDir, '..', 'presets')
 	const presetFiles = fs.readdirSync(presetsDir)
-	const chains = []
-	const assets = []
+	const chains: Caip2Chain[] = []
+	const assets: Caip19Asset[] = []
 
-	for(let file of presetFiles){
+	for (let file of presetFiles) {
 		log.info(`loading preset list ${file}`)
 
-		try{
-			const configText: string = fs.readFileSync(path.join(presetsDir, file), 'utf-8')
+		try {
+			const configText: string = fs.readFileSync(
+				path.join(presetsDir, file),
+				'utf-8',
+			)
 			const { chain, asset }: PresetConfig = toml.parse(configText)
 
-			if(chain?.length)
-				chains.push(...chain)
+			if (chain?.length) chains.push(...chain)
 
-			if(asset?.length)
-				assets.push(...asset)
-
-		}catch (error){
+			if (asset?.length) assets.push(...asset)
+		} catch (error) {
 			log.warn(`corrupt preset file ${file}`)
 			log.warn(error)
 		}
 	}
 
-	for(let asset of assets.slice()){
+	for (let asset of assets.slice()) {
 		const [chainId, _] = asset.id.split('/')
-		const chain = chains.find(chain => chain.id === chainId)
+		const chain = chains.find((chain) => chain.id === chainId)
 
-		if(!chain){
+		if (!chain) {
 			log.warn(`missing chain definition for asset ${asset.id}`)
 			assets.splice(assets.indexOf(asset, 1))
 			continue
@@ -56,15 +58,14 @@ function ingestPresets(ctx: AppContext){
 
 		asset.chain = chain
 	}
-	
+
 	writeChains(ctx, chains)
 	writeAssets(ctx, assets)
 }
 
-
 export function mapAliasToAsset(
-	ctx: AppContext, 
-	alias: { symbol: string, chain?: string }
+	ctx: AppContext,
+	alias: { symbol: string; chain?: string },
 ): Caip19Asset | null {
 	const searchSymbol = alias.symbol.toLowerCase()
 	const searchChain = alias.chain?.toLowerCase()
@@ -73,31 +74,29 @@ export function mapAliasToAsset(
 		const chainAliases = [
 			asset.chain.name,
 			...(asset.chain.aliases ?? []),
-			...(asset.chainAliases ?? [])
-		].map(a => a.toLowerCase())
+			...(asset.chainAliases ?? []),
+		].map((a) => a.toLowerCase())
 
 		const symbolAliases = [
 			asset.symbol,
 			asset.name,
-			...(asset.aliases ?? [])
-		].map(a => a.toLowerCase())
+			...(asset.aliases ?? []),
+		].map((a) => a.toLowerCase())
 
-		if(searchChain){
+		if (searchChain) {
 			const chainFoundIndex = chainAliases.indexOf(searchChain)
 			const symbolFoundIndex = symbolAliases.indexOf(searchSymbol)
 
-			if(chainFoundIndex === -1)
-				return 0
+			if (chainFoundIndex === -1) return 0
 
-			if(symbolFoundIndex === -1)
-				return 0
+			if (symbolFoundIndex === -1) return 0
 
-			return 1 - chainFoundIndex/100 - symbolFoundIndex/100
-		}else{
-			const concatSymbols = []
+			return 1 - chainFoundIndex / 100 - symbolFoundIndex / 100
+		} else {
+			const concatSymbols: string[] = []
 
-			for(let symbol of symbolAliases){
-				for(let chain of chainAliases){
+			for (let symbol of symbolAliases) {
+				for (let chain of chainAliases) {
 					concatSymbols.push(`${symbol}${chain}`)
 					concatSymbols.push(`${symbol}:${chain}`)
 					concatSymbols.push(`${symbol}-${chain}`)
@@ -109,17 +108,22 @@ export function mapAliasToAsset(
 
 			const concatFoundIndex = concatSymbols.indexOf(searchSymbol)
 
-			if(concatFoundIndex === -1)
-				return 0
+			if (concatFoundIndex === -1) return 0
 
-			return 1 - concatFoundIndex/600 // todo: needs better symmetry
+			return 1 - concatFoundIndex / 600 // todo: needs better symmetry
 		}
 	}
 
 	return ctx.assets
-		.map(asset => ({ asset, score: calculateScore(asset) }) as { asset: Caip19Asset, score: number })
+		.map(
+			(asset) =>
+				({ asset, score: calculateScore(asset) }) as {
+					asset: Caip19Asset
+					score: number
+				},
+		)
 		.sort((a, b) => b.score - a.score)
 		.filter(({ score }) => score > 0.25)
-		.at(0)
-		?.asset
+		.at(0)?.asset
 }
+
