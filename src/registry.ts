@@ -114,16 +114,17 @@ export function mapAliasToAsset(
 		}
 	}
 
-	return ctx.assets
-		.map(
-			(asset) =>
-				({ asset, score: calculateScore(asset) }) as {
-					asset: Caip19Asset
-					score: number
-				},
-		)
-		.sort((a, b) => b.score - a.score)
-		.filter(({ score }) => score > 0.25)
-		.at(0)?.asset
+	return (
+		ctx.assets
+			.map(
+				(asset) =>
+					({ asset, score: calculateScore(asset) }) as {
+						asset: Caip19Asset
+						score: number
+					},
+			)
+			.sort((a, b) => b.score - a.score)
+			.filter(({ score }) => score > 0.25)
+			.at(0)?.asset ?? null
+	)
 }
-
